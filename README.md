@@ -82,7 +82,7 @@ Contributions are welcome! Please follow these guidelines:
 
 ## License
 
-[Add License Information Here - e.g., MIT License, Apache 2.0 - and link to the LICENSE file]. *You MUST choose and include a license file.* See my previous responses for guidance on selecting a license.
+Apache 2.0 Licence: [LICENCE](LICENCE)
 
 ## Acknowledgements
 
