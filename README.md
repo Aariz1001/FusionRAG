@@ -82,7 +82,7 @@ Contributions are welcome! Please follow these guidelines:
 
 ## License
 
-Apache 2.0 Licence: [LICENCE](LICENCE)
+Apache 2.0 Licence: [LICENSE](LICENSE)
 
 ## Acknowledgements
 
