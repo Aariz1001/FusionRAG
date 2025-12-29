@@ -149,21 +149,21 @@ def validate_openrouter_api_key(api_key):
         return False, f"Connection error: {str(e)}"
 
 def count_tokens(text, model="gpt-3.5-turbo"):
-    """Count tokens in text using tiktoken.
+    """Count tokens in text using tiktoken with fallback for offline environments.
     
     Args:
         text (str): Text to count tokens for
         model (str): Model name for encoding
         
     Returns:
-        int: Number of tokens
+        int: Number of tokens (estimated if tiktoken unavailable)
     """
     try:
         encoding = tiktoken.encoding_for_model(model)
-    except KeyError:
-        encoding = tiktoken.get_encoding("cl100k_base")
-    
-    return len(encoding.encode(text))
+        return len(encoding.encode(text))
+    except (KeyError, Exception) as e:
+        # Fallback: rough estimation (1 token ≈ 4 characters for English text)
+        return len(text) // 4
 
 def calculate_cost(prompt_tokens, completion_tokens, model_pricing):
     """Calculate cost based on token usage and model pricing.
